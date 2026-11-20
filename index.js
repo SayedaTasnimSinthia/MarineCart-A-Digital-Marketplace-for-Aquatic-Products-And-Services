@@ -34,7 +34,7 @@ function updateTimers() {
 
     if (newsletterForm) {
         newsletterForm.addEventListener('submit', async (e) => {
-            e.preventDefault(); // Stop page from refreshing
+            e.preventDefault(); 
 
             const emailInput = document.getElementById('newsletter-email');
             if (!emailInput || !emailInput.value.trim()) return;
