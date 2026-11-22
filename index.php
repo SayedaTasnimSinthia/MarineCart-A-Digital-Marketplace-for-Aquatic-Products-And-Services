@@ -101,36 +101,6 @@ $categories = [
     ]
 ];
 
-$auctions = [
-    [
-        'id' => 101,
-        'title' => 'Rare Royal Blue Discus',
-        'current_bid' => 85.00,
-        'min_increment' => 5.00,
-        'bids_count' => 14,
-        'end_timestamp' => time() + 7400,
-        'image' => 'images/11.jpg'
-    ],
-    [
-        'id' => 102,
-        'title' => 'Midnight Halfmoon Betta Male',
-        'current_bid' => 42.50,
-        'min_increment' => 2.50,
-        'bids_count' => 19,
-        'end_timestamp' => time() + 14200,
-        'image' => 'images/12.jpg'
-    ],
-    [
-        'id' => 103,
-        'title' => 'Albino Red Dragon Guppy Trio',
-        'current_bid' => 28.00,
-        'min_increment' => 2.00,
-        'bids_count' => 8,
-        'end_timestamp' => time() + 259200,
-        'image' => 'images/13.jpg'
-    ]
-];
-
 $fixed_products = [
     [
         'id' => 201,
@@ -284,48 +254,6 @@ $fixed_products = [
                     </div>
                     <div class="price-row">
                         <div class="price">Tk.<?= number_format($p['price'], 2); ?> <span>/ <?= explode(' ', $p['pricing_type'])[1] ?? 'item'; ?></span></div>
-                    </div>
-                </div>
-                <?php endforeach; ?>
-            </div>
-        </div>
-    </section>
-
-    <section class="auctions-section" id="auctions">
-        <div class="container">
-            <div class="auctions-header-bar">
-                <div>
-                    <div class="section-tag-coral">Real-Time Bidding</div>
-                    <h2 class="section-heading-blue">Featured Live Auctions</h2>
-                </div>
-                <a href="auctions.php" class="btn btn-outline">View All</a>
-            </div>
-
-            <div class="auction-grid">
-                <?php foreach ($auctions as $auc): ?>
-                <div class="auction-card">
-                    <div class="auction-img-wrapper">
-                       
-                            <img src="<?= htmlspecialchars($auc['image']); ?>" alt="<?= htmlspecialchars($auc['title']); ?>">
-                
-                        <span class="live-tag">Live Auction</span>
-                        <span class="timer-badge countdown-timer" data-end="<?= $auc['end_timestamp']; ?>">Calculating...</span>
-                    </div>
-                    <div class="auction-body">
-                        <h3><a href="auctions.php?id=<?= $auc['id']; ?>"><?= htmlspecialchars($auc['title']); ?></a></h3>
-                        
-                        <div class="bid-info-box">
-                            <div>
-                                <span class="label">Current Highest Bid</span>
-                                <div class="amount" id="bid-val-<?= $auc['id']; ?>">Tk. <?= number_format($auc['current_bid'], 2); ?></div>
-                            </div>
-                            <div class="bid-increment-wrap">
-                                <span class="label">Min Increment</span>
-                                <span class="increment">+ Tk.<?= number_format($auc['min_increment'], 2); ?></span>
-                            </div>
-                        </div>
-
-                        
                     </div>
                 </div>
                 <?php endforeach; ?>
